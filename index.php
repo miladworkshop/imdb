@@ -1,8 +1,8 @@
 <?php
-$cookiedomain 	= str_replace("http://www.","",base64_decode('aHR0cDovL3d3dy5pbWRiLmNvbS8='));
+$cookiedomain 	= str_replace("http://www.","",base64_decode('aHR0cHM6Ly93d3cuaW1kYi5jb20v'));
 $cookiedomain 	= str_replace("https://www.","",$cookiedomain);
 $cookiedomain 	= str_replace("www.","",$cookiedomain);
-$url 			= base64_decode('aHR0cDovL3d3dy5pbWRiLmNvbS8=') . $_SERVER['REQUEST_URI'];
+$url 			= base64_decode('aHR0cHM6Ly93d3cuaW1kYi5jb20v') . $_SERVER['REQUEST_URI'];
 
 $bodyReplace = array(
 	"http://ia.media-imdb.com" 									=> "http://nfqq.nvswi2lbfvuw2zdcfzrw63i.nblk.ru",
@@ -72,7 +72,7 @@ if(curl_error($imdbcurl)){
 		$offs = strpos($body,"<script async");
 		$body = substr($body,0,$offs).substr($body,strpos($body,"push({})")+40);
 	}
-	$body = str_replace(base64_decode('aHR0cDovL3d3dy5pbWRiLmNvbS8='),$mydomain,$body);
+	$body = str_replace(base64_decode('aHR0cHM6Ly93d3cuaW1kYi5jb20v'),$mydomain,$body);
 	
 	foreach($bodyReplace as $k => $v){
 		$body = str_replace($k,$v,$body);
